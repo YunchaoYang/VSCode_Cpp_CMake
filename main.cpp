@@ -13,6 +13,8 @@ int main()
 
     cout << x;
 
+    cout << "bleu bleu";
+
     system("pause");
 
     return 0;
