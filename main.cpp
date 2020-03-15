@@ -12,6 +12,7 @@ int main()
     cin >> x;
 
     cout << x;
+    cout << "add bla bla";
 
     cout << "bleu bleu";
 
