@@ -13,6 +13,8 @@ int main()
 
     cout << x;
     cout << "add bla bla";
+    
+    ccou << "blo blo";
 
     cout << "bleu bleu";
 
