@@ -35,14 +35,41 @@
             "type": "shell",
             "command": "echo",
             "args": [
-                "XXX"
+                "Done !!!!!!!!!!!!!!!"
             ]
         },
         
         {
             "label": "Build",
             "dependsOrder": "sequence",
-            "dependsOn": ["release_build", "delay", "burn"]
+            "dependsOn": ["release_build", "burn"]
+        },
+
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "./a.exe",
+            "args": [
+                
+            ]
+        },
+        
+        {
+            "label": "Build and Run",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build", "Run"]
+        },
+
+        {
+            "label": "DLL Build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-shared",
+                "-o",
+                "add2.dll",
+                "add2.cpp"
+            ]
         }
     ]
 }
