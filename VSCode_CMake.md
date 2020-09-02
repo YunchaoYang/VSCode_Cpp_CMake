@@ -6,3 +6,4 @@ https://blog.csdn.net/zhaoxr233/article/details/90667313?biz_id=102&utm_term=VS%
 按F7或Shirft+F7就能自动在项目文件夹下新建一个Build文件夹，并将生成目标放至Build文件夹下
 
 In launch.json add: "preLaunchTask": "build",  
+"program": "${workspaceFolder}/build/${ProjectName}", 
