@@ -15,12 +15,10 @@ add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
         COMMENT "pre build..." # show before the commands are executed
         VERBATIM # recommended as it enables correct behavior.
         )
-
 add_custom_command(TARGET ${PROJECT_NAME} PRE_LINK
         COMMAND ${CMAKE_COMMAND} -E echo "pre link..."
         VERBATIM # recommended as it enables correct behavior.
         )
-
 # copy version.h libversion after build target
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo "copy version.h $<TARGET_FILE_NAME:${PROJECT_NAME}>..."
@@ -28,7 +26,6 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../lib/$<TARGET_FILE_NAME:${PROJECT_NAME}> ${CMAKE_CURRENT_SOURCE_DIR}/../bin
         VERBATIM
         )
-
 ```
 
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
@@ -45,6 +42,13 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib/ DESTINATION lib)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin/ DESTINATION bin)
 ```
 
+配置install，根目录为 CMAKE_INSTALL_PREFIX变量中的路径.
+```cmake
+# 配置可执行文件 exe 到安装路径 CMAKE_INSTALL_PREFIX的bin中
+install(TARGETS tutorial DESTINATION bin)
+# 配置程序的header file到安装路径 CMAKE_INSTALL_PREFIX的include文件中
+install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION include)
+```
 
 [Cmake编写CmakeList.txt 语法备忘](https://blog.csdn.net/HW140701/article/details/90203141?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159909366419724839833788%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=159909366419724839833788&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v3~pc_rank_v3-24-90203141.pc_ecpm_v3_pc_rank_v3&utm_term=cmake&spm=1018.2118.3001.4187 )
 
