@@ -1,5 +1,6 @@
 configure_file可以将源文件拷贝到另一个位置的同时将源文件中的变量替换为变量的值。若变量未定义，则替换为空。
-```
+
+```cmake
 configure_file(
          "${CMAKE_CURRENT_SOURCE_DIR}/config.h.in"
          "${CMAKE_CURRENT_SOURCE_DIR}/config.h"
