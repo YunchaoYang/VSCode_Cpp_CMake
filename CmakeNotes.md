@@ -49,6 +49,22 @@ install(TARGETS tutorial DESTINATION bin)
 # 配置程序的header file到安装路径 CMAKE_INSTALL_PREFIX的include文件中
 install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION include)
 ```
+install: 配置程序打包过程中的目标（TARGETS）、文件（FILES）、路径（DIRECTORY）、代码（CODE）和输出配置（EXPORT）
+```cmake
+install(TARGETS <target>... [...])
+install({FILES | PROGRAMS} <file>... [...])
+install(DIRECTORY <dir>... [...])
+install(SCRIPT <file> [...])
+install(CODE <code> [...])
+install(EXPORT <export-name> [...])
+```
+使用demo:
+```cmake
+install(TARGETS myExe mySharedLib myStaticLib
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib/static)
+```
 
 [Cmake编写CmakeList.txt 语法备忘](https://blog.csdn.net/HW140701/article/details/90203141?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159909366419724839833788%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=159909366419724839833788&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v3~pc_rank_v3-24-90203141.pc_ecpm_v3_pc_rank_v3&utm_term=cmake&spm=1018.2118.3001.4187 )
 
