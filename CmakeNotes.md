@@ -27,6 +27,9 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         VERBATIM
         )
 ```
+target_include_directorries()
+target_compile_definitions()
+target_compile_optiones()
 
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 // 提供一个选项是OFF或者ON，如果没有初始值被提供则默认使用OFF
